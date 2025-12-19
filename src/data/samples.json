@@ -1,0 +1,21 @@
+
+{
+  "project": {
+    "name": "MVP_Shed_01",
+    "units": "mm",
+    "origin": [0, 0, 0],
+    "density_kg_per_m3": 7850
+  },
+  "levels": [
+    { "name": "Base", "elevation": 0 },
+    { "name": "Eave", "elevation": 8000 }
+  ],
+  "sections": [
+    { "name": "ISMB300", "type": "I", "dims": { "bf": 140, "tw": 6.8, "tf": 12.2, "d": 300, "r": 9 }, "area_mm2": 5842, "perimeter_mm": 1020 },
+    { "name": "ISMB400", "type": "I", "dims": { "bf": 140, "tw": 8.7, "tf": 14.7, "d": 400, "r": 10 }, "area_mm2": 7854, "perimeter_mm": 1220 }
+  ],
+  "members": [
+    { "id": "C1", "type": "column", "section": "ISMB300", "start": [0, 0, 0], "end": [0, 0, 8000] },
+    { "id": "C    { "id": "C2", "type": "column", "section": "ISMB300", "start": [20000, 0, 0], "end": [20000, 0, 8000] },
+    { "id": "B1", "type": "beam", "section": "ISMB400", "start": [0, 0, 8000], "end": [20000, 0, 8000] }
+  ]
