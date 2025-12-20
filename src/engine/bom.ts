@@ -5,7 +5,7 @@ import { length3 } from "./mesh";
 
 export function computeBOM(model: Model) {
   const units = model.project.units;
-  const toMeters = (v: number) => units === "mm" ? v/1000 : v;
+  const toMeters = (v: number) => units === "mm" ? v/1000 : units === "m" ? v : v/39.37007874;
   const sectionMap = new Map(model.sections.map(s => [s.name, s]));
   const rows: string[][] = [["ID","Type","Section","Length_m","Weight_kg","Surface_m2"]];
 

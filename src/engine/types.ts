@@ -1,7 +1,7 @@
 
 // src/engine/types.ts
 export type Vec3 = [number, number, number];
-export type Units = "mm" | "m";
+export type Units = "mm" | "m" | "in";
 export type MemberType = "beam" | "column";
 
 export interface Project {

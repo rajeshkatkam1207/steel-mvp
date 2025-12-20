@@ -2,7 +2,7 @@
 import { z } from "zod";
 
 export const Vec3Schema = z.tuple([z.number(), z.number(), z.number()]);
-export const UnitsSchema = z.union([z.literal("mm"), z.literal("m")]);
+export const UnitsSchema = z.union([z.literal("mm"), z.literal("m"), z.literal("in")]);
 
 export const SectionDimsSchema = z.object({
   bf: z.number().positive(),

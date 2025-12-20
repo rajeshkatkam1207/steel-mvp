@@ -1,8 +1,8 @@
 
 {
   "project": {
-    "name": "MVP_Shed_01",
-    "units": "mm",
+    "name": "MVP_Shed_01_in",
+    "units": "in",
     "origin": [0, 0, 0],
     "density_kg_per_m3": 7850
   },
@@ -11,12 +11,12 @@
     { "name": "Eave", "elevation": 8000 }
   ],
   "sections": [
-    { "name": "ISMB300", "type": "I", "dims": { "bf": 140, "tw": 6.8, "tf": 12.2, "d": 300, "r": 9 }, "area_mm2": 5842, "perimeter_mm": 1020 },
-    { "name": "ISMB400", "type": "I", "dims": { "bf": 140, "tw": 8.7, "tf": 14.7, "d": 400, "r": 10 }, "area_mm2": 7854, "perimeter_mm": 1220 }
+    { "name": "ISMB300", "type": "I", "dims": { "bf": 5.511811023622048, "tw": 0.2677165354330705, "tf": 0.48031496062992125, "d": 11.811023622047244, "r": 0.3543307086614173 } },
+    { "name": "ISMB400", "type": "I", "dims": { "bf": 5.511811023622048, "tw": 0.3425196850393701, "tf": 0.578740157480315, "d": 15.748031496062992, "r": 0.39370078740157477 } }
   ],
   "members": [
-    { "id": "C1", "type": "column", "section": "ISMB300", "start": [0, 0, 0], "end": [0, 0, 8000] },
-    { "id": "C2", "type": "column", "section": "ISMB300", "start": [20000, 0, 0], "end": [20000, 0, 8000] },
-    { "id": "B1", "type": "beam", "section": "ISMB400", "start": [0, 0, 8000], "end": [20000, 0, 8000] }
+    { "id": "C1", "type": "column", "section": "ISMB300", "start": [0, 0, 0], "end": [0, 0, 314.96062992125984] },
+    { "id": "C2", "type": "column", "section": "ISMB300", "start": [787.4015748031497, 0, 0], "end": [787.4015748031497, 0, 314.96062992125984] },
+    { "id": "B1", "type": "beam", "section": "ISMB400", "start": [0, 0, 314.96062992125984], "end": [787.4015748031497, 0, 314.96062992125984] }
   ]
 }

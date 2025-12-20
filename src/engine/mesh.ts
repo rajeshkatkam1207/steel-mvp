@@ -6,9 +6,10 @@ import type { Member, Section } from "./types";
 export function length3(a: [number,number,number], b: [number,number,number]) {
   return Math.hypot(b[0]-a[0], b[1]-a[1], b[2]-a[2]);
 }
-const toMeters = (val: number, units: "mm"|"m") => units === "mm" ? val / 1000 : val;
+const toMeters = (val: number, units: "mm"|"m"|"in") =>
+  units === "mm" ? val / 1000 : units === "m" ? val : val / 39.37007874;
 
-export function makePrismaticMesh(m: Member, sec: Section, units: "mm"|"m") {
+export function makePrismaticMesh(m: Member, sec: Section, units: "mm"|"m"|"in") {
   const Lm = toMeters(length3(m.start, m.end), units);
   const depth = toMeters(sec.dims.d, units);
   const width = toMeters(sec.dims.bf, units);
