@@ -1,7 +1,7 @@
 
 // src/engine/solid.ts
 import * as THREE from "three";
-import type { Member, Section } from "./types";
+import type { Member, Section } from "./schema";
 
 /** Distance between two 3D points */
 export function length3(a: [number,number,number], b: [number,number,number]) {
@@ -47,7 +47,7 @@ function makeBasis(forward: THREE.Vector3, upPref: THREE.Vector3) {
  *  - length (Z_local) = member length
  */
 export function makeSolidBox(
-  m: Member, sec: Section, units: "mm"|"m", color?: number
+  m: Member, sec: Section, units: "mm"|"m"|"in", color?: number
 ): THREE.Mesh {
   const Lm = toMeters(length3(m.start, m.end), units);
   const depth = toMeters(sec.dims.d, units);   // Y_local
@@ -85,7 +85,7 @@ export function makeSolidBox(
  * Uses the same basis logic as the box.
  */
 export function makeSolidISection(
-  m: Member, sec: Section, units: "mm"|"m", color?: number
+  m: Member, sec: Section, units: "mm"|"m"|"in", color?: number
 ): THREE.Mesh {
   const Lm = toMeters(length3(m.start, m.end), units);
   const bf = toMeters(sec.dims.bf, units);

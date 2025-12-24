@@ -10,11 +10,12 @@ export async function importJson(file: File): Promise<Model> {
   return parsed.data;
 }
 
-export function exportJson(model: Model) {
+export function exportJson(model: Model, filename?: string) {
+  const fname = filename || `${model.project.name}.json`;
   const blob = new Blob([JSON.stringify(model, null, 2)], { type: "application/json" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
-   a.download = `${model.project.name}.json`;
+  a.download = fname;
   a.click();
 }
 
